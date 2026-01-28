@@ -1,5 +1,5 @@
 
-2025年度「データベース工学」の MongoDB に関する教材です。
+2025年度「データベース工学」の MongoDB に関する教材 (演習環境) です。
 
 ## 動作環境
 
@@ -55,7 +55,7 @@ MONGODB_USER="student"
 MONGODB_PASSWORD="secret123"
 ```
 
-上記の接続文字列は `docker/docker-compose.yaml` のデフォルト設定に対応しています。もし、`docker/docker-compose.yaml` を変更しているときは、次の値を変更してください。
+上記の環境変数は `docker/docker-compose.yaml` のデフォルト設定に対応しています。`docker/docker-compose.yaml` を変更したときは、それにあわせて、次の値を変更してください。
 
 - `student` : 学習用 MongoDB のユーザ名
 - `secret123` : 学習用 MongoDB のパスワード
@@ -108,7 +108,7 @@ git commit -m "任意のコミットメッセージ"
 git push
 ```
 
-## 教材の使用方法
+## 教材の使用方法 (MongoDBの実行方法)
 
 ### 準備: Docker Desktop の起動確認
 
@@ -116,13 +116,13 @@ git push
 
 ### 準備: MongoDB と mongo-express の起動
 
-VSCode でプロジェクトフォルダを開き、`[Ctrl]+[J]` を押下してターミナル (PowerShell) を起動してください。つづいて、次のコマンドを実行して PostgreSQL と DbGate の Dockerコンテナ を起動してください。
+VSCode でプロジェクトフォルダを開き、`[Ctrl]+[J]` を押下してターミナル (PowerShell) を起動してください。つづいて、次のコマンドを実行して MongoDB と mongo-express の Dockerコンテナ を起動してください。
 
 ```bash
 npm run db:up
 ```
 
-これは `package.json` の `scripts` に定義されたコマンドで、実際には次のコマンドが実行されます。
+上記は `package.json` の `scripts` に定義されたコマンドで、実際には次のコマンドが実行されます。
 
 ```bash
 docker compose -f docker/docker-compose.yaml -p mongo8dev up -d --wait
@@ -138,7 +138,7 @@ mongosh ファイルは、拡張子を `mongosh.js` として、基本的に `mo
 npm run mql mongosh/14/create-s_users.mongosh.js
 ```
 
-また、`.vscode/tasks.json` にビルドタスクを定義しているので、`create-s_users.mongosh.js` のエディタタブがアクティブな状態で `[Ctrl]+[Shift]+[B]` を押下することで、上記コマンドを実行することができます。
+また、`.vscode/tasks.json` にビルドタスクを定義しているので、`create-s_users.mongosh.js` のエディタタブがアクティブな状態で `[Ctrl]+[Shift]+[B]` を押下することでも、上記コマンドを実行することができます。
 
 ### TypeScriptファイルの実行
 
@@ -162,11 +162,11 @@ npx tsx watch src/samples/helloWorld.ts
 npm run dev src/samples/helloWorld.ts
 ```
 
-### DbGate の利用
+### mongo-express の利用
 
-ウェブブラウザで `http://localhost:8080/` にアクセスすることで DbGate を利用できます。DbGateは、データベースの内容を視覚的に確認したり、SQL を実行したりできるウェブベースのGUIツールです。
+ウェブブラウザで `http://localhost:8081/` にアクセスすることで mongo-express を利用できます。mongo-express は、データベースの内容を視覚的に確認したり、クエリを発効することができるウェブベースの GUIツール です。
 
-### PostgreSQL と DbGate の停止
+### MongoDB と mongo-express の停止
 
 次のコマンドで、コンテナを停止します。
 
