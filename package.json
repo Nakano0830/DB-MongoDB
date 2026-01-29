@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "tsx watch",
+    "dev": "tsx",
     "mql": "tsx scripts/mqlFileRunner.ts",
     "db:up": "docker compose -f docker/docker-compose.yaml -p mongo8dev up -d --wait",
     "db:down": "docker compose -f docker/docker-compose.yaml -p mongo8dev down",

@@ -59,7 +59,7 @@ MONGODB_PASSWORD="secret123"
 
 - `student` : 学習用 MongoDB のユーザ名
 - `secret123` : 学習用 MongoDB のパスワード
-- `playground` : 学習用 MongoDB のデフォルトコレクション名
+- `playground` : 学習用 MongoDB のデフォルトデータベース名
 
 ### リモートリポジトリの設定
 
