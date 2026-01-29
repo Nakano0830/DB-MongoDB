@@ -142,7 +142,7 @@ npm run mql mongosh/14/sample.mongosh.js
 
 ### TypeScriptファイルの実行
 
-TypeScriptファイル ([mongodb](https://www.npmjs.com/package/mongodb)や[mongoose](https://www.npmjs.com/package/mongoose)などのライブラリを使ってMongoDBを操作する場合) は、基本的に `src` フォルダのなかに、必要に応じてサブフォルダを作成して配置してください。
+TypeScriptファイル ([mongodb](https://www.npmjs.com/package/mongodb) や [mongoose](https://www.npmjs.com/package/mongoose) などのライブラリを使ってMongoDBを操作する場合) は、基本的に `src` フォルダのなかに、必要に応じてサブフォルダを作成して配置してください。
 
 例えば、`src/samples/helloWorld.ts` というファイルを作成したときは、次のコマンドにより、プログラムの実行ができます。
 
